@@ -86,13 +86,13 @@ async def callback_russian_roulette_yes(callback: types.CallbackQuery):
     summ = int(float(data[2]))
 
     if callback.from_user.id == owner_button:
-        chance = random.random()
+        chance = random.choice([0, 1, 1, 0, 0, 2])
 
-        if chance < 0.45:
+        if chance == 1:
             su = int(summ * 0.5)
             txt = f'🎉 Удача на вашей стороне! Вы выиграли <b>{su} монет!</b> 🤑'
             await upd_balance(owner_button, su, 'win')
-        elif chance < 0.50:
+        elif chance == 2:
             txt = '🤷‍♂️ Ничья! Вы не потеряли свои деньги и можете попробовать снова.'
         else:
             txt = f'😔 Увы, вы проиграли <b>{summ} монет</b>. Не сдавайтесь и удача обязательно улыбнется!'
