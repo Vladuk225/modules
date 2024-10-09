@@ -119,6 +119,7 @@ def register_handlers(dp: Dispatcher):
     dp.register_callback_query_handler(callback_russian_roulette_yes, lambda callback: callback.data.startswith("yes_"))
     dp.register_callback_query_handler(callback_russian_roulette_no, lambda callback: callback.data.startswith("no_"))
 
+
 MODULE_DESCRIPTION = {
     'name': '🔫 Русская рулетка',
     'description': 'Новая игра "Русская рулетка"'
